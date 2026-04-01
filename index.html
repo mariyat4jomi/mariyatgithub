@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Marks Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Marks Calculator</h2>
+
+    <input type="number" id="mark1" placeholder="Enter Subject 1 Marks"><br>
+    <input type="number" id="mark2" placeholder="Enter Subject 2 Marks"><br>
+    <input type="number" id="mark3" placeholder="Enter Subject 3 Marks"><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculate() {
+        let m1 = Number(document.getElementById("mark1").value);
+        let m2 = Number(document.getElementById("mark2").value);
+        let m3 = Number(document.getElementById("mark3").value);
+
+        let total = m1 + m2 + m3;
+        let average = total / 3;
+
+        document.getElementById("result").innerHTML =
+            "Total Marks: " + total + "<br>Average Marks: " + average.toFixed(2);
+    }
+</script>
+
+</body>
+</html>
